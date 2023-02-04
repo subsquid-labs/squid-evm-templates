@@ -1,0 +1,8 @@
+[submodule "evm-template"]
+	path = evm-template
+	url = https://github.com/subsquid/squid-evm-template.git
+	branch = master
+[submodule "abi-template"]
+	path = abi-template
+	url = https://github.com/subsquid/squid-abi-template.git
+	branch = master
