@@ -6,3 +6,6 @@
 	path = abi-template
 	url = https://github.com/subsquid/squid-abi-template.git
 	branch = master
+[submodule "erc20-template"]
+	path = erc20-template
+	url = https://github.com/subsquid-labs/squid-erc20-template.git
