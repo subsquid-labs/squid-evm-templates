@@ -9,3 +9,4 @@
 [submodule "erc20-template"]
 	path = erc20-template
 	url = https://github.com/subsquid-labs/squid-erc20-template.git
+	branch = master
