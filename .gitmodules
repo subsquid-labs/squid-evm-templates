@@ -10,3 +10,6 @@
 	path = erc20-template
 	url = https://github.com/subsquid-labs/squid-erc20-template.git
 	branch = master
+[submodule "multichain-template"]
+	path = multichain-template
+	url = https://github.com/subsquid-labs/squid-multichain-template

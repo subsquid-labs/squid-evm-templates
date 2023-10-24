@@ -5,6 +5,7 @@ This repository is a collection of templates for developing [Subsquid](https://w
 * [**erc20**](https://github.com/subsquid-labs/squid-erc20-template/) - a complete squid for indexing all standard events and function calls of an arbitrary [ERC20 token contract](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/).
 * [**abi**](https://github.com/subsquid-labs/squid-abi-template/) - a template for autogenerating squids that index events and function calls within the [ABI](https://docs.soliditylang.org/en/v0.8.13/abi-spec.html) of a given contract.
 * [**evm**](https://github.com/subsquid-labs/squid-evm-template/) - a minimal squid indexing all Ethereum transactions that send ETH to the null address (a.k.a. "burns").
+* [**multichain**](https://github.com/subsquid-labs/squid-multichain-template) - a template for indexing multiple chains at once. Captures ERC20 `Transfer` events of USDC on Ethereum and BSC.
 
 To begin using the templates, install the `sqd` excutable:
 
