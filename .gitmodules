@@ -13,3 +13,6 @@
 [submodule "multichain-template"]
 	path = multichain-template
 	url = https://github.com/subsquid-labs/squid-multichain-template
+[submodule "gravatar-template"]
+	path = gravatar-template
+	url = https://github.com/subsquid/gravatar-squid
