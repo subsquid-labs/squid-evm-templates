@@ -5,6 +5,7 @@ This repository is a collection of templates for developing [Subsquid](https://w
 * [**erc20**](https://github.com/subsquid-labs/squid-erc20-template/) - a complete squid for indexing all standard events and function calls of an arbitrary [ERC20 token contract](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/).
 * [**abi**](https://github.com/subsquid-labs/squid-abi-template/) - a template for autogenerating squids that index events and function calls within the [ABI](https://docs.soliditylang.org/en/v0.8.13/abi-spec.html) of a given contract.
 * [**evm**](https://github.com/subsquid-labs/squid-evm-template/) - a minimal squid indexing all Ethereum transactions that send ETH to the null address (a.k.a. "burns").
+* [**gravatar**](https://github.com/subsquid-labs/gravatar-squid) - a squid migrated from the [Gravatar subgraph](https://github.com/graphprotocol/example-subgraph).
 * [**multichain**](https://github.com/subsquid-labs/squid-multichain-template) - a template for indexing multiple chains at once. Captures ERC20 `Transfer` events of USDC on Ethereum and BSC.
 
 To begin using the templates, install the `sqd` excutable:
@@ -15,7 +16,7 @@ npm install -g @subsquid/cli@latest
 
 Next, fetch the chosen template to a new project folder using `sqd init`:
 ```bash
-sqd init <new-project-name> -t <erc20|abi|evm>
+sqd init <new-project-name> -t <erc20|abi|evm|gravatar|multichain>
 ```
 You now have a copy of the chosen squid template sitting at the `<new-project-name>` folder.
 
@@ -25,11 +26,11 @@ You now have a copy of the chosen squid template sitting at the `<new-project-na
 
 ## Configuring the template
 
-**erc20**: open the `.env` file in the squid project folder and set the `CONTRACT_ADDRESS` variable value to the address of the token contract you want to index. 
+**erc20**: open the `.env` file in the squid project folder and set the `CONTRACT_ADDRESS` and `CONTRACT_DEPLOYED_AT` variables to the address of the token contract you want to index and the block height at which it was deployed, correspondingly.
 
 **abi**: enter the squid project folder and generate the squid code with `sqd generate`. See `sqd generate --help` for further instructions. The [Archives overview](https://docs.subsquid.net/archives/overview/) page of Subsquid documentation may also be helpful.
 
-**evm**: no configuration required.
+**evm**, **gravatar**, **multichain**: no configuration required.
 
 ## Starting the squid
 
@@ -43,17 +44,18 @@ cd <new-project-name>
 npm ci
 sqd build
 sqd up # starts a Postgres database in a Docker container
-sqd process
+sqd migration:apply # optional for all squids except multichain
+sqd run .
 ```
-Processor should now be running in foreground, printing messages like
+Processor(s) and the GraphQL server should now be running in foreground, printing messages like
 ```
 01:02:37 INFO  sqd:processor 234354 / 16519081, rate: 17547 blocks/sec, mapping: 2420 blocks/sec, 2945 items/sec, ingest: 794 blocks/sec, eta: 16m
 ```
-The extracted data will begin accumulating in the database available at `localhost:23798` (consult the template's `.env` file for login and password). If you want to access it via GraphQL, run
+The extracted data will begin accumulating in the database available at `localhost:23798`. Log in using the container default credentials:
 ```bash
-sqd serve
+PGPASSWORD=postgres psql -U postgres -p 23798 -h localhost squid
 ```
-in a separate terminal in the `<new-project-name>` folder. Graphical query builder will be available at [http://localhost:4350/graphql](http://localhost:4350/graphql).
+Graphical GraphQL query builder will be available at [http://localhost:4350/graphql](http://localhost:4350/graphql).
 
 ## Further reading
 
@@ -61,5 +63,5 @@ in a separate terminal in the `<new-project-name>` folder. Graphical query build
   - [ABI template page](https://docs.subsquid.io/quickstart/quickstart-abi/)
   - [EVM template page](https://docs.subsquid.io/quickstart/quickstart-ethereum/)
 * [Squid development flow](https://docs.subsquid.io/basics/squid-development/): a guide to reshaping a template into your own squid.
-* (possibly still under construction)[EVM indexing](https://docs.subsquid.io/evm-indexing/): the comprehensive documentation section on indexing EVM chains.
+* [EVM indexing](https://docs.subsquid.io/evm-indexing/): the comprehensive documentation section on indexing EVM chains.
 * [Tutorials](https://docs.subsquid.io/tutorials/) and [examples](https://docs.subsquid.io/examples).
