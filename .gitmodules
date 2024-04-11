@@ -1,18 +1,30 @@
 [submodule "evm-template"]
-	path = evm-template
+	path = evm
 	url = https://github.com/subsquid-labs/squid-evm-template.git
 	branch = master
 [submodule "abi-template"]
-	path = abi-template
+	path = abi
 	url = https://github.com/subsquid-labs/squid-abi-template.git
 	branch = master
 [submodule "erc20-template"]
-	path = erc20-template
+	path = erc20
 	url = https://github.com/subsquid-labs/squid-erc20-template.git
 	branch = master
 [submodule "multichain-template"]
-	path = multichain-template
+	path = multichain
 	url = https://github.com/subsquid-labs/squid-multichain-template
 [submodule "gravatar-template"]
-	path = gravatar-template
+	path = gravatar
 	url = https://github.com/subsquid-labs/gravatar-squid.git
+[submodule "file-store-csv"]
+	path = file-store-csv
+	url = https://github.com/subsquid-labs/file-store-csv-example.git
+[submodule "file-store-parquet"]
+	path = file-store-parquet
+	url = https://github.com/subsquid-labs/file-store-parquet-example.git
+[submodule "file-store-s3"]
+	path = file-store-s3
+	url = https://github.com/subsquid-labs/file-store-s3-example.git
+[submodule "bigquery"]
+	path = bigquery
+	url = https://github.com/subsquid-labs/squid-bigquery-example.git
