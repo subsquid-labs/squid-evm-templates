@@ -1,10 +1,10 @@
 [submodule "evm-template"]
 	path = evm-template
-	url = https://github.com/subsquid/squid-evm-template.git
+	url = https://github.com/subsquid-labs/squid-evm-template.git
 	branch = master
 [submodule "abi-template"]
 	path = abi-template
-	url = https://github.com/subsquid/squid-abi-template.git
+	url = https://github.com/subsquid-labs/squid-abi-template.git
 	branch = master
 [submodule "erc20-template"]
 	path = erc20-template
@@ -15,4 +15,4 @@
 	url = https://github.com/subsquid-labs/squid-multichain-template
 [submodule "gravatar-template"]
 	path = gravatar-template
-	url = https://github.com/subsquid/gravatar-squid
+	url = https://github.com/subsquid-labs/gravatar-squid.git
