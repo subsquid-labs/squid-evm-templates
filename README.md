@@ -1,6 +1,6 @@
 # Templates for EVM squids
 
-This repository is a collection of templates for developing [Subsquid](https://www.subsquid.io)-based indexers ("squids") that work with [EVM](https://ethereum.org/en/developers/docs/evm/)-based chains such as Ethereum, Polygon, Arbitrum etc. Available templates:
+This repository is a collection of templates for developing [Subsquid](https://sqd.dev)-based indexers ("squids") that work with [EVM](https://ethereum.org/en/developers/docs/evm/)-based chains such as Ethereum, Polygon, Arbitrum etc. Available templates:
 
 * [**erc20**](https://github.com/subsquid-labs/squid-erc20-template/) - a complete squid for indexing all standard events and function calls of an arbitrary [ERC20 token contract](https://ethereum.org/en/developers/docs/standards/tokens/erc-20/).
 * [**abi**](https://github.com/subsquid-labs/squid-abi-template/) - a template for autogenerating squids that index events and function calls within the [ABI](https://docs.soliditylang.org/en/v0.8.13/abi-spec.html) of a given contract.
@@ -36,7 +36,7 @@ You now have a copy of the chosen squid template sitting at the `<new-project-na
 
 All EVM squid templates, once configured, are complete squids. They can run locally, provided that `sqd` and Docker are available.
 
-The "processor" process is present in all squids. It downloads pre-filtered blockchain data from [Subsquid Archives](https://docs.subsquid.io/archives/), applies any necessary transformations and saves the result in an [application-appropriate storage](https://docs.subsquid.io/basics/store/). Currently, all template squids store their data to a Postgresql database and provide a way to access it via a GraphQL API.
+The "processor" process is present in all squids. It downloads pre-filtered blockchain data from [Subsquid Archives](https://docs.sqd.dev/en/sdk), applies any necessary transformations and saves the result in an [application-appropriate storage](https://docs.sqd.dev/en/sdk). Currently, all template squids store their data to a Postgresql database and provide a way to access it via a GraphQL API.
 
 To start the processor, run
 ```bash
@@ -59,9 +59,9 @@ Graphical GraphQL query builder will be available at [http://localhost:4350/grap
 
 ## Further reading
 
-* [Quickstart guides at Subsquid docs](https://docs.subsquid.io/quickstart/): a more detailed version of this README that gets updated before this file does. In particular:
-  - [ABI template page](https://docs.subsquid.io/quickstart/quickstart-abi/)
-  - [EVM template page](https://docs.subsquid.io/quickstart/quickstart-ethereum/)
-* [Squid development flow](https://docs.subsquid.io/basics/squid-development/): a guide to reshaping a template into your own squid.
-* [EVM indexing](https://docs.subsquid.io/evm-indexing/): the comprehensive documentation section on indexing EVM chains.
-* [Tutorials](https://docs.subsquid.io/tutorials/) and [examples](https://docs.subsquid.io/examples).
+* [Quickstart guides at Subsquid docs](https://docs.sqd.dev/en/sdk): a more detailed version of this README that gets updated before this file does. In particular:
+  - [ABI template page](https://docs.sqd.dev/en/sdk)
+  - [EVM template page](https://docs.sqd.dev/en/sdk)
+* [Squid development flow](https://docs.sqd.dev/en/sdk): a guide to reshaping a template into your own squid.
+* [EVM indexing](https://docs.sqd.dev/en/sdk): the comprehensive documentation section on indexing EVM chains.
+* [Tutorials](https://docs.sqd.dev/en/sdk) and [examples](https://docs.sqd.dev/en/sdk).
